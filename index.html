@@ -87,12 +87,15 @@
             box-shadow: 
                 inset -8px -8px 0px 0px #ab6a1f, /* Scaled up inset shadow to 8px */
                 8px 8px 0px 0px var(--darkest-contrast); /* Scaled up overall shadow to 8px */
+            /* FIX: Apply a counter-translation to visually center the button + shadow */
+            transform: translate(-4px, -4px); 
             animation: glowing 0.8s infinite alternate; /* SYNCED duration with emoji bounce (0.8s) */
             transition: transform 0.1s;
         }
 
         .pixel-btn:active {
-            transform: translate(8px, 8px); /* Scaled up active shift to 8px */
+            /* FIX: When active, shift 8px relative to the *original* position, which is 4px down/right from the new centered position */
+            transform: translate(4px, 4px); 
             box-shadow: inset -8px -8px 0px 0px #ab6a1f;
         }
 
