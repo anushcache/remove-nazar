@@ -43,6 +43,10 @@
             width: 100%;
             max-width: 600px;
             padding: 20px;
+            /* Default for desktop/larger screens - centered by flexbox */
+            position: relative; 
+            top: 0; 
+            transform: none; 
         }
 
         .subtitle-box {
@@ -257,8 +261,11 @@
 
         @media (max-width: 600px) {
             .container {
-                /* FIX: Push content down slightly for better visual centering on mobile */
-                transform: translateY(40px); 
+                /* New approach: position absolutely and use calc to offset from 50% for visual centering */
+                position: absolute;
+                top: calc(50% - 70px); /* Adjust this value to move the block up/down for visual balance */
+                left: 50%;
+                transform: translateX(-50%); /* Ensures horizontal centering */
             }
             .subtitle-box { font-size: 0.9rem; max-width: 90vw; } /* Adjusted mobile font size */
             .charm { font-size: 60px; }
