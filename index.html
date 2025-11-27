@@ -261,9 +261,9 @@
 
         @media (max-width: 600px) {
             .container {
-                /* New approach: position absolutely and use calc to offset from 50% for visual centering */
+                /* Aggressively pull content up to visually center on mobile due to browser UI */
                 position: absolute;
-                top: calc(50% - 70px); /* Adjust this value to move the block up/down for visual balance */
+                top: calc(50% - 100px); /* Increased negative offset to pull it higher */
                 left: 50%;
                 transform: translateX(-50%); /* Ensures horizontal centering */
             }
@@ -422,7 +422,7 @@
 
             // --- PHASE 3: THE 7 CIRCLES (Perfect Circular Orbit + Salt Drip) ---
             const rotations = 7;
-            const durationPerRotation = 2500; // Increased duration for slower rotation
+            const durationPerRotation = 1500; // Increased duration for slower rotation
             const startTime = performance.now();
             let rotationsCompleted = 0; 
 
